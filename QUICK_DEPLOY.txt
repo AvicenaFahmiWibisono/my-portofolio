@@ -1,0 +1,144 @@
+╔═══════════════════════════════════════════════════════════╗
+║     QUICK DEPLOYMENT GUIDE - cPanel Static Hosting        ║
+╚═══════════════════════════════════════════════════════════╝
+
+📦 DEPLOYMENT PACKAGE READY!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+File: portfolio_deploy.zip (42 MB)
+Location: C:\Avicena\avicenafahmi\portfolio-dark\
+
+OR use files directly from: out\ folder
+
+
+🚀 5-MINUTE DEPLOYMENT STEPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. LOGIN TO CPANEL
+   → Open your hosting cPanel dashboard
+
+2. OPEN FILE MANAGER
+   → cPanel → File Manager → public_html
+
+3. UPLOAD FILES
+   Option A: Upload portfolio_deploy.zip → Extract
+   Option B: Upload all files from out\ folder directly
+
+4. SET PERMISSIONS
+   → Right-click sendmail.php → Permissions → 644
+
+5. TEST WEBSITE
+   → Visit: https://yourdomain.com
+   → Test contact form
+
+
+📋 FILES TO UPLOAD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+From out\ folder:
+├── index.html          ← Main page (75KB)
+├── sendmail.php        ← Contact form (2.4KB)
+├── .htaccess          ← Server config
+├── _next/             ← Next.js assets
+├── assets/            ← Your images
+├── favicon.ico
+└── Other files...
+
+
+⚙️ CPANEL REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ PHP 7.4+ or 8.x
+✓ PHP mail() function enabled
+✓ SMTP configured
+✓ SSL certificate (for HTTPS)
+
+
+🔧 DESTINATION FOLDERS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Main domain:
+→ Upload to: public_html/
+→ URL: https://avicenafahmi.com
+
+Subdomain (e.g., portfolio.avicenafahmi.com):
+→ Create subdomain first in cPanel
+→ Upload to: public_html/portfolio/
+→ URL: https://portfolio.avicenafahmi.com
+
+
+✅ POST-DEPLOYMENT CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Website loads (https://yourdomain.com)
+□ All images display correctly
+□ Navigation works
+□ Language toggle works (EN/ID)
+□ Contact form sends email
+□ Received test email at:
+  → avicena@avicenafahmi.com
+  → avicenafw@gmail.com
+□ Mobile responsive tested
+□ SSL certificate active (HTTPS)
+
+
+🐛 TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Email not sending?
+→ Check PHP mail() enabled in cPanel
+→ Verify SMTP settings
+→ Check spam folder
+
+Images broken?
+→ Verify assets/image/ folder uploaded
+→ Check file permissions (644)
+
+Blank page?
+→ Check .htaccess file
+→ Set PHP version to 7.4+ or 8.x
+→ Check error logs in cPanel
+
+
+📞 EMAIL CONFIGURATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Contact form sends to:
+→ avicena@avicenafahmi.com
+→ avicenafw@gmail.com
+
+To change recipients:
+Edit sendmail.php lines 43-46
+
+
+🔄 FUTURE UPDATES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Make changes locally
+2. Run: npm run build
+3. Upload new out\ folder to cPanel
+4. Overwrite existing files
+
+
+📚 DOCUMENTATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Full guide: DEPLOYMENT_GUIDE.md
+Technical details included
+
+
+🎉 YOUR PORTFOLIO IS READY TO GO LIVE!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Features:
+✓ Fully responsive (mobile, tablet, desktop)
+✓ Dark mode design
+✓ Multi-language (English/Indonesian)
+✓ Working contact form with email
+✓ 6 project showcases with galleries
+✓ 3 certifications display
+✓ Fast loading (static files)
+✓ SEO optimized
+✓ SSL ready (HTTPS)
+
+Good luck with your deployment! 🚀
