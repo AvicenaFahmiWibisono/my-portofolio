@@ -51,5 +51,5 @@ Write-Host "ZIP FILE: $zipFile" -ForegroundColor Magenta
 Write-Host ""
 Write-Host "✓ Ready to deploy!" -ForegroundColor Green
 Write-Host ""
-Write-Host "Need help? Check DEPLOYMENT_GUIDE.md" -ForegroundColor Gray
+Write-Host "Need help? Check docs/DEPLOYMENT_GUIDE.md" -ForegroundColor Gray
 Write-Host "========================================" -ForegroundColor Cyan

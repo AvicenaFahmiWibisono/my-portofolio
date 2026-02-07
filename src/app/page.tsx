@@ -1,4 +1,4 @@
-﻿
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -17,6 +17,7 @@ export default function Home() {
   const [language, setLanguage] = useState<Language>('en');
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
   // Handle hydration mismatch
   useEffect(() => {
@@ -41,6 +42,10 @@ export default function Home() {
     setIsDarkMode(!isDarkMode);
   };
 
+  const handleModalChange = (isOpen: boolean) => {
+    setIsNavbarVisible(!isOpen);
+  };
+
   const t = translations[language];
   const projectsData = getProjectsData(language);
 
@@ -53,7 +58,8 @@ export default function Home() {
         language={language} 
         toggleLanguage={toggleLanguage} 
         isDarkMode={isDarkMode} 
-        toggleTheme={toggleTheme} 
+        toggleTheme={toggleTheme}
+        visible={isNavbarVisible}
       />
       
       <Hero t={t} />
@@ -62,7 +68,7 @@ export default function Home() {
       
       <Experience t={t} isDarkMode={isDarkMode} />
       
-      <Projects t={t} projects={projectsData} />
+      <Projects t={t} projects={projectsData} onModalChange={handleModalChange} />
       
       <Contact t={t} />
       

@@ -18,13 +18,13 @@ export default function Footer({ t }: FooterProps) {
           </p>
           
           <div className="flex gap-6">
-            <a href="#" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            <a href="https://github.com/AvicenaFahmiWibisono/" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors">
               <Github size={18} />
             </a>
-            <a href="#" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            <a href="https://id.linkedin.com/in/avicena-fahmi-785679208" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors">
               <Linkedin size={18} />
             </a>
-            <a href="#" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors">
+            <a href="https://www.instagram.com/avicenaazz/" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors">
               <Instagram size={18} />
             </a>
             <a href="#" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors">

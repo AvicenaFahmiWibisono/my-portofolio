@@ -12,9 +12,10 @@ interface NavbarProps {
   toggleLanguage: () => void;
   isDarkMode: boolean;
   toggleTheme: () => void;
+  visible?: boolean;
 }
 
-export default function Navbar({ t, language, toggleLanguage, isDarkMode, toggleTheme }: NavbarProps) {
+export default function Navbar({ t, language, toggleLanguage, isDarkMode, toggleTheme, visible = true }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -36,7 +37,8 @@ export default function Navbar({ t, language, toggleLanguage, isDarkMode, toggle
   return (
     <motion.nav
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      animate={{ y: visible ? 0 : -200 }}
+      transition={{ duration: 0.3 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled ? 'py-4' : 'py-6'
       }`}

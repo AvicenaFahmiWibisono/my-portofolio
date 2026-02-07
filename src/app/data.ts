@@ -237,39 +237,75 @@ export const getProjectsData = (lang: Language): Project[] => {
       tech: ['WHM/cPanel', 'WHMCS', 'Pterodactyl', 'VPS'],
       icon: '🌐',
       fullDescription: isID
-        ? 'Membangun dan meluncurkan CenaHost (cenahost.id), bisnis hosting multi-layanan yang beroperasi penuh dari awal menggunakan infrastruktur VPS.\n\nPlatform ini menyediakan tiga layanan utama: Web Hosting dengan cPanel, Hosting Server Game Minecraft dengan panel Pterodactyl, dan Bot Hosting untuk WhatsApp, Discord, dan Telegram.\n\nProyek ini mencakup administrasi server lengkap dari pengaturan VPS awal hingga deployment produksi, mengimplementasikan alat manajemen hosting standar industri dengan billing otomatis melalui WHMCS.'
+        ? `🚀 Perjalanan Infrastructure & Cloud Engineering
+
+“Secara teori, tidak ada perbedaan antara teori dan praktik.
+Dalam praktiknya, ada.” — Yogi Berra
+
+Saya memulai perjalanan ini bukan sebagai cloud engineer, melainkan sebagai profesional IT yang didorong oleh rasa ingin tahu dan keinginan untuk memahami bagaimana infrastruktur hosting bekerja sesungguhnya di lingkungan produksi.
+
+Asumsi awal saya sederhana: Linux adalah Linux. Saya pertama kali men-deploy server menggunakan Ubuntu, percaya itu sudah cukup untuk beban kerja hosting. Asumsi ini dengan cepat runtuh ketika saya mulai bekerja dengan lingkungan berbasis cPanel dan mempelajari bahwa CloudLinux—dipasangkan dengan AlmaLinux—diperlukan. Kesalahan konfigurasi awal itu menjadi pelajaran penting: keputusan infrastruktur itu kontekstual, dan asumsi yang salah akan muncul dengan cepat dalam sistem nyata.
+
+Dari sana, saya menjelajahi stack hosting dari ujung ke ujung. Saya menguji panel kontrol gratis dan komersial, termasuk HestiaCP dan cPanel, serta meluncurkan layanan hosting uji coba untuk mengamati perilaku pengguna nyata. Meskipun HestiaCP menawarkan fleksibilitas, ia memperkenalkan tantangan stabilitas dan kegunaan. Bermigrasi ke cPanel mengurangi gesekan tetapi memunculkan masalah baru, seperti kesalahan runtime PHP, ketidakstabilan layanan, dan konflik dependensi, yang semuanya memerlukan debugging terstruktur dan penyetelan konfigurasi.
+
+Seiring matangnya platform, fokus saya berkembang dari server ke integrasi sistem dan otomatisasi. Saya mengimplementasikan FOSSBilling, mempelajari platform billing komersial seperti WHMCS, dan akhirnya membangun sistem billing kustom yang terintegrasi dengan Midtrans. Fase ini memaparkan saya pada tantangan dunia nyata yang melibatkan keandalan API, penanganan webhook, manajemen status transaksi, dan pemulihan kegagalan.
+
+Selama fase hosting uji coba, saya mendukung pengguna nyata—terutama pelajar—yang kesulitan dengan alur kerja deployment dasar seperti mengunggah situs web melalui panel kontrol. Mendukung mereka memperkuat pelajaran penting: infrastruktur yang andal bukan hanya tentang uptime, tetapi juga tentang kegunaan dan kejelasan bagi pengguna non-teknis.
+
+Meskipun proyek ini tidak berkembang menjadi bisnis yang berkelanjutan, ia berhasil sebagai tempat pelatihan yang dirancang sendiri. Saya mendapatkan pengalaman langsung dalam desain infrastruktur, pemecahan masalah di bawah batasan nyata, dan pengambilan keputusan berbasis data—termasuk kapan harus berhenti dan beralih arah (pivot).
+
+“Pengalaman adalah nama yang diberikan semua orang pada kesalahan mereka.” — Oscar Wilde
+
+Perjalanan ini membentuk pola pikir rekayasa saya, menekankan realisme, kesadaran operasional, dan keberlanjutan di atas ambisi semata.
+
+🧠 Ringkasan Stack Teknis
+
+Infrastructure & OS
+• Linux (Ubuntu, AlmaLinux)
+• CloudLinux
+• VPS provisioning & management
+
+Hosting & Control Panels
+• WHM / cPanel
+• HestiaCP
+• Lingkungan hosting uji coba
+
+Web & Runtime
+• PHP runtime debugging & configuration
+• Node.js (deployment awareness)
+• Manajemen web server
+
+Billing & Automation
+• FOSSBilling
+• WHMCS
+• Sistem billing kustom (self-built)
+• Integrasi API
+• Payment gateway: Midtrans
+• Webhook & penanganan alur transaksi
+
+Containers & Platform
+• Docker
+• Pterodactyl Panel (Game Server Hosting)`
         : `🚀 Infrastructure & Cloud Engineering Journey
-(Technical Storytelling with Practical Experience)
 
-"In theory, there is no difference between theory and practice.
-In practice, there is." — Yogi Berra
+“In theory, there is no difference between theory and practice.
+In practice, there is.” — Yogi Berra
 
-I didn’t begin this journey as a cloud engineer. I began as an IT professional with strong curiosity and zero real-world experience managing VPS and production servers.
+I began this journey not as a cloud engineer, but as an IT professional driven by curiosity and a desire to understand how hosting infrastructure actually works in production.
 
-My early assumption was simple: Linux is Linux. I initially deployed servers using Ubuntu, believing it would be sufficient for hosting workloads. That assumption quickly broke when I started working with cPanel-based environments and discovered the dependency on CloudLinux, which in turn required AlmaLinux. That early misstep became my first major lesson in infrastructure: technology choices are not interchangeable, and context matters.
+My initial assumption was simple: Linux is Linux. I first deployed servers using Ubuntu, believing it would be sufficient for hosting workloads. This assumption quickly broke when I started working with cPanel-based environments and learned that CloudLinux—paired with AlmaLinux—was required. That early misconfiguration became a defining lesson: infrastructure decisions are contextual, and wrong assumptions surface quickly in real systems.
 
-From there, I deliberately experimented across the stack. I deployed and tested free control panels such as HestiaCP, explored both free and paid hosting configurations, and opened trial hosting services to observe real user behavior. While HestiaCP offered flexibility, I encountered frequent bugs, feature limitations, and stability challenges—especially for non-technical users.
+From there, I explored the hosting stack end-to-end. I tested free and commercial control panels, including HestiaCP and cPanel, and launched trial hosting services to observe real user behavior. While HestiaCP offered flexibility, it introduced stability and usability challenges. Migrating to cPanel reduced friction but surfaced new issues, such as PHP runtime errors, service instability, and dependency conflicts, all of which required structured debugging and configuration tuning.
 
-These limitations led me to migrate to cPanel, where I faced a different category of problems. Despite being a commercial solution, it introduced its own operational challenges, including PHP runtime issues, unexpected service errors, and dependency-related bugs that required systematic debugging and configuration tuning. This phase taught me that enterprise tools reduce friction—but never eliminate complexity.
+As the platform matured, my focus expanded from servers to system integration and automation. I implemented FOSSBilling, studied commercial billing platforms like WHMCS, and ultimately built a custom billing system integrated with Midtrans. This phase exposed me to real-world challenges involving API reliability, webhook handling, transaction state management, and failure recovery.
 
-As the infrastructure matured, I shifted my focus from servers to systems integration. I implemented FOSSBilling as an open-source billing solution and studied how platforms like WHMCS handled automation and lifecycle management. Rather than stopping there, I designed and built a custom billing system, integrating it with Midtrans as a payment gateway. This exposed me to real-world challenges around API reliability, webhook handling, transaction states, and failure recovery.
+During a trial hosting phase, I supported real users—primarily students—who struggled with basic deployment workflows such as uploading websites via control panels. Supporting them reinforced an important lesson: reliable infrastructure is not only about uptime, but also about usability and clarity for non-technical users.
 
-During a trial hosting phase, I supported real users—primarily students—who struggled with basic hosting workflows such as uploading personal websites through control panels. One moment stood out: even users close to me lacked fundamental hosting knowledge. Teaching them patiently helped me realize something critical—engineering is not just about systems working correctly, but about systems being understandable.
+Although the project did not evolve into a sustainable business, it succeeded as a self-designed training ground. I gained hands-on experience in infrastructure design, troubleshooting under real constraints, and making data-driven decisions—including when to stop and pivot.
 
-Throughout this project, I handled:
-• Server provisioning
-• OS migration decisions
-• Control panel evaluation
-• PHP and runtime debugging
-• Billing automation
-• Payment gateway integration
-• User support under real constraints
+“Experience is the name everyone gives to their mistakes.” — Oscar Wilde
 
-The project ultimately did not meet my business expectations. However, it succeeded as a self-designed training ground. I learned how systems fail in practice, how users behave unpredictably, and how to make rational decisions—including the decision to stop—based on data rather than emotion.
-
-"Experience is the name everyone gives to their mistakes." — Oscar Wilde
-
-This journey shaped my engineering mindset. I now approach infrastructure with realism, empathy, and operational awareness—understanding that stability, clarity, and sustainability matter more than ambition alone.
+This journey shaped my engineering mindset, emphasizing realism, operational awareness, and sustainability over ambition alone.
 
 🧠 Technical Stack Summary
 
@@ -279,55 +315,48 @@ Infrastructure & OS
 • VPS provisioning & management
 
 Hosting & Control Panels
-• cPanel
+• WHM / cPanel
 • HestiaCP
 • Trial hosting environments
 
 Web & Runtime
-• PHP debugging & configuration
+• PHP runtime debugging & configuration
 • Node.js (deployment awareness)
 • Web server management
 
 Billing & Automation
 • FOSSBilling
+• WHMCS
 • Custom billing system (self-built)
 • API integration
 • Payment gateway: Midtrans
-• Webhooks & transaction flow handling
+• Webhook & transaction flow handling
 
-Operational Skills
-• Troubleshooting & debugging
-• Migration planning
-• User support & documentation
-• System decision-making under constraints`,
+Containers & Platform
+• Docker
+• Pterodactyl Panel (Game Server Hosting)`,
       features: isID ? [
-        'Pengaturan dan pengerasan server VPS lengkap dari instalasi Linux kosong',
+        'Setup dan pengerasan server VPS lengkap dari instalasi Linux kosong',
         'Instalasi dan konfigurasi WHM/cPanel untuk manajemen web hosting',
         'Deployment panel Pterodactyl untuk hosting server Minecraft',
-        'Integrasi WHMCS untuk billing otomatis dan manajemen klien',
-        'Lingkungan hosting multi-layanan: Web, Game Server, dan Bot Hosting',
-        'Web Hosting: Storage SSD NVMe, Sertifikat SSL Gratis, akses cPanel',
-        'Minecraft Hosting: Perlindungan DDoS, setup instan, dukungan plugin',
-        'Bot Hosting: WhatsApp Bot, Discord Bot, Telegram Bot dengan uptime andal',
-        'Provisioning akun otomatis di semua platform',
+        'Billing otomatis dan manajemen siklus hidup klien (WHMCS & billing kustom)',
+        'Lingkungan hosting multi-layanan: Web Hosting (NVMe SSD, SSL Gratis, cPanel), Game Server, & Bot Hosting',
+        'Provisioning akun otomatis di semua layanan',
         'Konfigurasi email server dengan perlindungan spam',
-        'Otomasi sertifikat SSL/TLS dengan Let\'s Encrypt',
-        'Backup otomatis harian untuk semua layanan',
-        'Panel kontrol kustom untuk manajemen layanan'
+        'Otomasi SSL/TLS menggunakan Let’s Encrypt',
+        'Backup otomatis harian',
+        'Panel kontrol internal kustom untuk manajemen layanan'
       ] : [
-        'Complete VPS server setup and hardening from bare Linux installation',
+        'End-to-end VPS server setup and hardening from bare Linux installation',
         'WHM/cPanel installation and configuration for web hosting management',
         'Pterodactyl panel deployment for Minecraft server hosting',
-        'WHMCS integration for automated billing and client management',
-        'Multi-service hosting environment: Web, Game Server, and Bot Hosting',
-        'Web Hosting: SSD NVMe storage, Free SSL certificates, cPanel access',
-        'Minecraft Hosting: DDoS protection, instant setup, plugin support',
-        'Bot Hosting: WhatsApp Bot, Discord Bot, Telegram Bot with reliable uptime',
-        'Automated account provisioning across all platforms',
+        'Automated billing and client lifecycle management (WHMCS & custom billing)',
+        'Multi-service hosting environment: Web Hosting (NVMe SSD, Free SSL, cPanel), Game Server, & Bot Hosting',
+        'Automated account provisioning across all services',
         'Email server configuration with spam protection',
-        'SSL/TLS certificate automation with Let\'s Encrypt',
-        'Daily automated backups for all services',
-        'Custom control panel for service management'
+        'SSL/TLS automation using Let’s Encrypt',
+        'Daily automated backups',
+        'Custom internal control panel for service management'
       ],
       technologies: [
         { name: 'WHM/cPanel', category: 'Hosting' },
@@ -347,7 +376,7 @@ Operational Skills
       duration: isID ? 'Jan 2024' : 'Jan 2024',
       role: isID ? 'System Administrator & Founder' : 'System Administrator & Founder',
       github: '#',
-      demo: '#',
+      demo: 'https://cenahost.id',
       images: [
         '/assets/image/portocenahost/13.png',
         '/assets/image/portocenahost/14.png',
