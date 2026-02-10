@@ -1,11 +1,8 @@
-
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Translations } from '../app/data';
-import { Mail, Send, MapPin, Phone, MessageSquare, ArrowRight, Github, Linkedin, Instagram } from 'lucide-react';
-import SpotlightCard from './ui/SpotlightCard';
+import { Mail, Send, MapPin, ArrowRight, Github, Linkedin, Instagram } from 'lucide-react';
 
 interface ContactProps {
   t: Translations;
@@ -61,21 +58,11 @@ export default function Contact({ t }: ContactProps) {
   ];
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
-          <div className="absolute bottom-[20%] left-[10%] w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl" />
-          <div className="absolute top-[10%] right-[5%] w-[300px] h-[300px] bg-purple-500/5 rounded-full blur-3xl" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="contact" className="py-32 relative overflow-hidden bg-zinc-50/50 dark:bg-zinc-950/50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+          <div className="animate-fadeIn">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-sm font-medium mb-6">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
@@ -93,7 +80,7 @@ export default function Contact({ t }: ContactProps) {
             </p>
 
             <div className="space-y-6 mb-12">
-              <SpotlightCard className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-1">
+              <div className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-1 shadow-sm hover:shadow-md transition-shadow">
                 <a href="mailto:avicenafw@gmail.com" className="flex items-center gap-4 p-4 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors group">
                   <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 group-hover:scale-110 transition-transform">
                     <Mail className="w-6 h-6" />
@@ -104,9 +91,9 @@ export default function Contact({ t }: ContactProps) {
                   </div>
                   <ArrowRight className="w-5 h-5 text-zinc-300 dark:text-zinc-600 group-hover:text-blue-500 group-hover:translate-x-1 transition-all" />
                 </a>
-              </SpotlightCard>
+              </div>
 
-              <SpotlightCard className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-1">
+              <div className="bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-1 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-4 p-4 rounded-xl">
                   <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-500">
                     <MapPin className="w-6 h-6" />
@@ -116,7 +103,7 @@ export default function Contact({ t }: ContactProps) {
                     <p className="text-zinc-900 dark:text-white font-medium">West Java, Indonesia</p>
                   </div>
                 </div>
-              </SpotlightCard>
+              </div>
             </div>
 
             <div className="flex items-center gap-4">
@@ -132,15 +119,11 @@ export default function Contact({ t }: ContactProps) {
                  </a>
                ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <SpotlightCard className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 shadow-xl relative overflow-hidden">
+          <div className="animate-fadeIn delay-100">
+            <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 shadow-xl relative overflow-hidden">
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -195,13 +178,9 @@ export default function Contact({ t }: ContactProps) {
                   }`}
                 >
                   {submitStatus === 'success' ? (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="flex items-center gap-2"
-                    >
+                    <div className="flex items-center gap-2 animate-fadeIn">
                       Message Sent!
-                    </motion.div>
+                    </div>
                   ) : (
                     <>
                       {isSubmitting ? (
@@ -216,11 +195,8 @@ export default function Contact({ t }: ContactProps) {
                   )}
                 </button>
               </form>
-              
-              {/* Decorative gradient inside card */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full blur-3xl -z-0 pointer-events-none" />
-            </SpotlightCard>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

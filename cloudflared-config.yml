@@ -1,0 +1,9 @@
+tunnel: 2c9fb8aa-787d-48bb-a2e5-9e5003243cc7
+credentials-file: /root/.cloudflared/2c9fb8aa-787d-48bb-a2e5-9e5003243cc7.json
+
+ingress:
+  - hostname: avicenafahmi.com
+    service: http://localhost:3002
+  - hostname: avicenafahmi.com.aetherproject.web.id
+    service: http://localhost:3002
+  - service: http_status:404

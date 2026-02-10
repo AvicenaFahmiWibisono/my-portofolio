@@ -1,10 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Translations } from '../app/data';
 import { Briefcase, Code, GraduationCap, Award, Cpu, Users, Sparkles } from 'lucide-react';
-import SpotlightCard from './ui/SpotlightCard';
-import Counter from './ui/Counter';
 
 interface AboutProps {
   t: Translations;
@@ -25,16 +22,11 @@ export default function About({ t }: AboutProps) {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 text-sm mb-4 shadow-sm"
-          >
+        <div className="text-center mb-16 animate-fadeIn">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 text-sm mb-4 shadow-sm hover:scale-105 transition-transform">
             <Sparkles className="w-3.5 h-3.5 text-blue-500" />
             {t.about.sectionTitle}
-          </motion.div>
+          </div>
           
           <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-white tracking-tight mb-4">
              Passionate about <span className="text-blue-500 inline-block">
@@ -50,13 +42,8 @@ export default function About({ t }: AboutProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[minmax(180px,auto)]">
           
           {/* Education Card - Tall Left */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="md:row-span-2 h-full"
-          >
-            <SpotlightCard className="h-full bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 rounded-3xl overflow-hidden">
+          <div className="md:row-span-2 h-full animate-fadeIn" style={{ animationDelay: '0.1s' }}>
+            <div className="h-full bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
               <div className="p-8 flex flex-col h-full relative z-10">
                 <div className="mb-6 w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500">
                   <GraduationCap className="w-7 h-7" />
@@ -81,44 +68,37 @@ export default function About({ t }: AboutProps) {
               
               {/* Decorative gradient */}
               <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-blue-500/10 to-transparent rounded-full blur-3xl -z-0" />
-            </SpotlightCard>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Stats Grid - Top Right (2x2) */}
           <div className="md:col-span-2 grid grid-cols-2 gap-4">
              {stats.map((stat, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  className="animate-fadeIn"
+                  style={{ animationDelay: `${0.2 + (index * 0.1)}s` }}
                 >
-                  <SpotlightCard className="h-full bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 text-center hover:border-blue-500/50 transition-colors">
+                  <div className="h-full bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 text-center hover:border-blue-500/50 transition-colors shadow-sm hover:shadow-md">
                     <div className="flex flex-col items-center justify-center h-full w-full">
                       <div className="mb-4 w-12 h-12 bg-zinc-50 dark:bg-zinc-800 rounded-xl flex items-center justify-center">
                         {stat.icon}
                       </div>
                       <div className="text-3xl font-bold text-zinc-900 dark:text-white mb-1">
-                        <Counter value={stat.number} suffix={stat.suffix} />
+                        {stat.number}{stat.suffix}
                       </div>
                       <div className="text-xs text-zinc-500 dark:text-zinc-400 font-medium uppercase tracking-wide">
                         {stat.label}
                       </div>
                     </div>
-                  </SpotlightCard>
-                </motion.div>
+                  </div>
+                </div>
              ))}
           </div>
 
           {/* Skills - Bottom Right (Wide) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="md:col-span-2"
-          >
-            <SpotlightCard className="h-full bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 rounded-3xl relative overflow-hidden group">
+          <div className="md:col-span-2 animate-fadeIn" style={{ animationDelay: '0.6s' }}>
+            <div className="h-full bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 rounded-3xl relative overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
               <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl -z-0 group-hover:bg-purple-500/10 transition-colors duration-500" />
               
               <div className="p-8 md:p-10 relative z-10">
@@ -170,8 +150,8 @@ export default function About({ t }: AboutProps) {
                   </div>
                 </div>
               </div>
-            </SpotlightCard>
-          </motion.div>
+            </div>
+          </div>
 
         </div>
       </div>
